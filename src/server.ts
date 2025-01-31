@@ -15,6 +15,8 @@ import { powerpointGeneratorRouter } from './routes/powerpointGenerator/powerpoi
 import { webPageReaderRouter } from './routes/webPageReader/webPageReaderRouter';
 import { wordGeneratorRouter } from './routes/wordGenerator/wordGeneratorRouter';
 import { youtubeTranscriptRouter } from './routes/youtubeTranscript/youtubeTranscriptRouter';
+import { backupSyncRouter } from './routes/backupSync/backupSyncRouter';
+
 const logger = pino({ name: 'server start' });
 const app: Express = express();
 
@@ -42,6 +44,7 @@ app.use('/web-page-reader', webPageReaderRouter);
 app.use('/powerpoint-generator', powerpointGeneratorRouter);
 app.use('/word-generator', wordGeneratorRouter);
 app.use('/excel-generator', excelGeneratorRouter);
+app.use('/backup-sync', backupSyncRouter);
 // Swagger UI
 app.use(openAPIRouter);
 
